@@ -31,6 +31,8 @@ body {
   align-items: center;
   position: relative;
   cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  font-size: calc(var(--cell-size) * .9);
 }
 
 .cell:first-child,
@@ -51,65 +53,6 @@ body {
 .cell:nth-child(8),
 .cell:nth-child(7) {
   border-bottom: none;
-}
-
-.cell.x,
-.cell.o {
-  cursor: not-allowed;
-}
-
-.cell.x::before,
-.cell.x::after,
-.cell.o::before {
-  background-color: black;
-}
-
-.board.x .cell:not(.x):not(.o):hover::before,
-.board.x .cell:not(.x):not(.o):hover::after,
-.board.o .cell:not(.x):not(.o):hover::before {
-  background-color: lightgrey;
-}
-
-.cell.x::before,
-.cell.x::after,
-.board.x .cell:not(.x):not(.o):hover::before,
-.board.x .cell:not(.x):not(.o):hover::after {
-  content: '';
-  position: absolute;
-  width: calc(var(--mark-size) * .15);
-  height: var(--mark-size);
-}
-
-.cell.x::before,
-.board.x .cell:not(.x):not(.o):hover::before {
-  transform: rotate(45deg);
-}
-
-.cell.x::after,
-.board.x .cell:not(.x):not(.o):hover::after {
-  transform: rotate(-45deg);
-}
-
-.cell.o::before,
-.cell.o::after,
-.board.o .cell:not(.x):not(.o):hover::before,
-.board.o .cell:not(.x):not(.o):hover::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-}
-
-.cell.o::before,
-.board.o .cell:not(.x):not(.o):hover::before {
-  width: var(--mark-size);
-  height: var(--mark-size);
-}
-
-.cell.o::after,
-.board.o .cell:not(.x):not(.o):hover::after {
-  width: calc(var(--mark-size) * .7);
-  height: calc(var(--mark-size) * .7);
-  background-color: white;
 }
 
 .endgame {
